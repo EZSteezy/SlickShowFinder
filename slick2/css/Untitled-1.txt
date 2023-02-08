@@ -1,0 +1,22 @@
+let twoSums = (array, target) => { //twoSums takes in an array and a target number
+    let memory = {}; //creates an empty object
+    
+    for (let i = 0; i < array.length; i++) { //iterate through the array
+      let num = target - array[i]; //if num equals to the target value minus the number in the array
+      memory[array[i]] = num; //put num into memory obj
+      
+      if(memory[num] && i != num){  //if num is in memory and i != num
+          return [ array.indexOf(num), array.indexOf(array[i]) ]; //return the indices of the two sum values
+          
+      }
+      console.log("first num " + array[i]);
+      console.log("second num " + num);
+    }
+    console.log("no numbers found!");
+   return []; //returns empty array if nothing is found that will equate to the target
+  
+  };
+
+  let testarr = [3,7,1,10,15,4,15];
+  let target = 11;
+  console.log(twoSums(testarr, target));
